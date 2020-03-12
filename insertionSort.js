@@ -1,5 +1,3 @@
-
-
 //Approach
 //1. Start by picking second element of arr
 //2 Compare to previous elements, swap if neccessary
