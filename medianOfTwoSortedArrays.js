@@ -10,3 +10,4 @@ var findMedianSortedArrays = function(nums1, nums2) {
       //ex: [1, 2, 3] 3/2 = 1.5 , floored would give us index 1, which is the number 2.
   }
 };
+
