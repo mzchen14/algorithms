@@ -31,3 +31,5 @@ function same(arr1, arr2) {
 }
 
 same([1,2,3,4,5,5,5], [1,4,21,9,16,25,25]);
+
+//Time: O(n), Space O(n)
