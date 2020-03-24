@@ -16,3 +16,16 @@ function hasSingleCycle(array) {
       }
       return current === 0 //after all jumpps are made, return if the current is back at 0
   }
+
+//NOTE ON % (modulo) :
+  //if the first number is greater than 0 but less than the second num, the ans is = first num
+  //ex: 2 % 6 = 2
+  //if the first num is negative, the ans is always the difference between the second num and the first num.
+
+// -5 % 7 = 2 ---> 7 - 5 = 2
+// 4 % -9 = -5 ---> 9 - 4 = -5 (follow the sign of the larger number)
+
+//If both numbers were negative, the answer will always be a negative number which is equal to the smaller number.
+
+// -5 % -7 = -5
+// -4 % -9 = -4
