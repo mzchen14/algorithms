@@ -22,7 +22,7 @@ function shortestWordEditPath(source, target, words) {
               diff++ //increment diff
             }
           }
-          if(diff === 1 && !visited.has(nextWord)){ //if diff is strictly 0 & the word has not been visited yet
+          if(diff === 1 && !visited.has(nextWord)){ //if diff is strictly 1 & the word has not been visited yet
             queue.push(nextWord); //push it onto our queue
             visited.add(nextWord) //add the word to visited set
           }
