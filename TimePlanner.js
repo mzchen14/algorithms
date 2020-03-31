@@ -50,3 +50,6 @@ function meetingPlanner(slotsA, slotsB, dur) {
     }
     return []
   }
+
+  //Time Complexity = O(n+m), Space = O(1)
+  //Takeaways: Can use .max() & .min() methods in order to calculate the max and mins instead of if comparisons!
