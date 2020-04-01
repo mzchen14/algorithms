@@ -19,4 +19,5 @@ var searchInsert = function(nums, target) {
     return left //if nothing is round and left is now greater than right, return left because
                 //If left has not moved, that means left = 0, and every value above has been greater than target
                 //OR it means that left is now passed the length of the arr and that every value has been less than the target
+    //Note* right + 1 could also be used here instead of left because right has either go past the 0th index and needs to return to 0 or, needs to be 1 more than the last index if right has not moved.
 }
