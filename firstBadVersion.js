@@ -36,6 +36,6 @@ var solution = function(isBadVersion) {
                 left = mid+1 //otherwise, close in the left, anything before mid, should be good,  + 1 because mid is also good
             }
         }
-        return badVer //return the badVersion **Note, we can also just use right instead of badVer
+        return badVer //return the badVersion **Note, we can also just use right instead of badVer since they update at the same times
     };
 };
