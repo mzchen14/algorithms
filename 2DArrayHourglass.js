@@ -37,7 +37,7 @@ Our highest hourglass value is  from the hourglass:
 // Complete the hourglassSum function below.
 function hourglassSum(arr) {
     let max = -Infinity
-    let sum = 0
+    let sum //Note initializing to zero gave an error
     for(let i = 0; i < arr.length; i++) {
         for(let j = 0; j < arr.length; j++) {
             if(i > 0 && i < arr.length-1 && j > 0 && j < arr.length-1){
