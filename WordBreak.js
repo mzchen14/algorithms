@@ -46,3 +46,7 @@ function wordBreak(s, wordDict) {
     }
     return false; //if nothing is found and the queue empties, return false
   }
+
+  //TIme = O(n^2) //for each starting qix, we need to iterate until end of string
+  //Space = O(n) //Queue size is at WORST n size in case every letter is in the dictionary
+  
