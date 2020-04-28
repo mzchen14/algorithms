@@ -26,9 +26,9 @@ var nextPermutation = function(nums) {
     }
     
     if(i == 0) {
-        reverse(i) //in the case that it is the last permutation, we                        just want to return the first perm
+        reverse(i) //in the case that it is the last permutation, we just want to return the first perm
     } else {
-        swap(j-1, j) //otherwise, swap j and previous number                                  before the decreasing started
+        swap(j-1, j) //otherwise, swap j and previous number before the decreasing started
         reverse(i)
     }
 };

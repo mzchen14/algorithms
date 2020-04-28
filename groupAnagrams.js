@@ -26,3 +26,21 @@ var groupAnagrams = function(strs) {
     }
     return Object.values(hashMap)
 };
+
+//Did again for algo expert:
+function groupAnagrams(words) {
+    // Write your code here.
+      let hash = {}
+      for(let i = 0; i < words.length; i++) {
+          if(sort(words[i]) in hash) {
+              hash[sort(words[i])].push(words[i])
+          } else {
+              hash[sort(words[i])] = [words[i]]
+          }
+      }
+      return Object.values(hash)
+  }
+  
+  const sort = (word) => {
+      return word.split('').sort().join('')
+  }
