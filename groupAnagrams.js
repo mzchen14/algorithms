@@ -44,3 +44,6 @@ function groupAnagrams(words) {
   const sort = (word) => {
       return word.split('').sort().join('')
   }
+
+
+  //Time = O(w * n * log n) , Space = O(wn) w is the number of words, n is length of the longest word
