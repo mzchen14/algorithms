@@ -9,7 +9,7 @@ var lengthOfLongestSubstring = function(s) {
           j++; //increment j
           max = Math.max(max, set.size); //max length would be the max between the current max, and the current set size
       } else { //otherwise, if the set already contains the letter at index j
-          set.delete(s[i]); //delete the letter of the set that matches s[i] which would be the earliest addition to the set.
+          set.delete(s[i]); //delete the letter of the set that matches s[i] which would be the earliest addition to the set, NOTE: j does not increment if we hit this case so we revisit the j element and push it back into the set
           i++; //increment the beginning of the window, making the window smaller from the left.
       }
   }
