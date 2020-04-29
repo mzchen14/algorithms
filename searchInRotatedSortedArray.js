@@ -40,7 +40,8 @@ var search = function(nums, target) {
     left = 0 //left is back at 0
     right = nums.length-1 //right is back at nums.length-1
     
-    if(target >= nums[start] && target <= nums[right]) { //if the target number is between the index of the the smallest number & target is <= the number on the right, 
+    if(//target >= nums[start] && 
+        target <= nums[right]) { //if the target number is between the index of the the smallest number & target is <= the number on the right, 
                                                         //then we can just traverse from left to right from the smallest num index to the end of arr
         left = start
     } else {    
