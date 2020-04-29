@@ -20,3 +20,28 @@ var lengthOfLongestSubstring = function(s) {
 //Key takeaways:
 // 1. Sliding window technique
 // 2. Using sets to store unique elements
+
+
+//Variation in which you have to return the longest substring:
+function longestSubstringWithoutDuplication(string) {
+    // Write your code here.
+      let longest = [0, 1]
+      let set = new Set()
+      let i = 0;
+      let j = 0;
+      while(i < string.length && j < string.length) {
+          if(!set.has(string[j])) {
+              set.add(string[j])
+              j++
+              if(longest[1]-longest[0] < j - i) {
+                  longest = [i, j]
+              }
+          } else {
+              set.delete(string[i])
+              i++
+          }
+      }
+      return string.slice(longest[0], longest[1])
+  }
+
+  //Time = O(n), Space = O(min(n, a))
