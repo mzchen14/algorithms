@@ -24,3 +24,6 @@ var numJewelsInStones = function(J, S) {
     }
     return counter
 };
+
+//Time = O(S + J)
+//Space = O(J)
