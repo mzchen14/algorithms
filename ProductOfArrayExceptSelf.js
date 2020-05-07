@@ -46,3 +46,23 @@ var productExceptSelf = function(nums) {
     }
     return output
 };
+
+//Alternative solution with only 1 array
+var productExceptSelf = function(nums) {
+    if(nums.length < 2) throw new Error('Need at least 2 numbers!')
+    let productsArray = []
+    let currentProduct = 1
+    
+    for(let i = 0; i < nums.length; i++) {
+        productsArray[i] = currentProduct
+        currentProduct *= nums[i]
+    }
+    currentProduct = 1
+    
+    for(let i = nums.length-1; i >= 0; i--) {
+        productsArray[i] *= currentProduct
+        currentProduct *= nums[i]
+    }
+    
+    return productsArray
+};
