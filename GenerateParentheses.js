@@ -16,14 +16,17 @@ var generateParenthesis = function(n) {
     const solution = [] //solutions array
     
     const generateCombo = (leftCount, rightCount, str) => { //helper function to generate each combo
-        if(leftCount > rightCount) return //base cases, if leftCount is greater than right Count at any time, we know it will not work because we will not be able to close all the left parentheses.
+        //ALT: if(leftCount > rightCount) return //base cases, if leftCount is greater than right Count at any time, we know it will not work because we will not be able to close all the left parentheses.
         if(!leftCount && !rightCount) solution.push(str) //if leftCount === 0 && rightCount === 0, that means we're done! Push the string into the solutions array
         
         if(leftCount > 0) { //if leftCount is greater than 0, create a recursive branch where we are adding the left parenthese and decrementing the leftCount
             generateCombo(leftCount - 1, rightCount, str + '(') 
         }
-        if(rightCount > 0) { //if rightCount is greater than 0, create a recrusive branch where we care adding a right parenthese and decrementing the rightCount
-            generateCombo(leftCount, rightCount - 1, str + ')')
+        // ALT: if(rightCount > 0) { //if rightCount is greater than 0, create a recrusive branch where we care adding a right parenthese and decrementing the rightCount
+        //     generateCombo(leftCount, rightCount - 1, str + ')')
+        // }
+        if(rightCount > leftCount) { //if the rightCount is greater than the leftCount, we can create a recursive branch where we add closing parentheses because we know we can close them!
+            generateCombo(leftCount, rightCount-1, str+')')
         }
     }
     
@@ -32,4 +35,4 @@ var generateParenthesis = function(n) {
 };
 
 /* 
-Time = */
+Time and Space: n-th Catalan number*/
