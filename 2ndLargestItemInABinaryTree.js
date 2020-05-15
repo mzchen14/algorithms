@@ -29,7 +29,7 @@ function findSecondLargest(treeRoot) {
     }
     
     if(treeRoot.right) { //initiate recursive calls by passing in root's night child into the helperFunction
-      return helper(treeRoot.right, treeRoot)
+      return helper(treeRoot.right, treeRoot) //this will retur our answer
     }
   
   }
