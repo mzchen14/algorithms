@@ -32,7 +32,7 @@ function isBalanced(treeRoot) {
       nodes.push([currentNode.left, depth+1])
     }
     if(currentNode.right) {
-      nodes.push([currentNode.right, depth+1])
+      nodes.push([currentNode.right, depth+1]) //for some reason this has to be depth+1 instead of depth++ or ++depth
     }
   }
   //in the case that we never break out of the while loop, and our ndoes stack empties out, we return true
