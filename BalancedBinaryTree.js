@@ -37,4 +37,4 @@ function isBalanced(treeRoot) {
   }
   //in the case that we never break out of the while loop, and our ndoes stack empties out, we return true
   return true
-}
+} 
