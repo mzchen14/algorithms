@@ -61,4 +61,10 @@ class Queue {
     return null //return null if no paths were found in the end
   }
   
+  /* 
+  Time = O(n + m) //n being our bfs traversal, m being our iteration over the neighbors of each node
+  Space = O(n)
   
+  Takeaways/Tips for backtracking:
+  1.Figuring out what additional information we need to store in order to rebuild our path at the end (howWeReachedNodes, in this case).
+  2.Figuring out how to reconstruct the path from that information.*/
