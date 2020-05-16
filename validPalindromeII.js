@@ -9,6 +9,8 @@ Input: "abca"
 Output: True
 Explanation: You could delete the character 'c'.
 */
+
+//Recursive + pointers
 var validPalindrome = function(s, correctionsPossible = 1) {
     let left = 0
     let right = s.length-1
@@ -26,7 +28,7 @@ var validPalindrome = function(s, correctionsPossible = 1) {
     return true
 };
 
-
+//Pointers
 var validPalindrome = function(s) {
     let left = 0,
         right = s.length - 1;
@@ -51,3 +53,5 @@ var validPalindrome = function(s) {
     
     return true;
 };
+
+//Time = O(n) Space = O(1)
