@@ -49,6 +49,26 @@ var minRemoveToMakeValid = function(s) {
 };
 
 
+//Faster O(3n):
+var minRemoveToMakeValid = function(str) {
+
+    str = str.split(""); //convert string into array because we are going to manipulate it
+	let stack = []; //create a stack
+    for(let i = 0; i<str.length; i++){
+        if(str[i]==="(") //if it is an open brace, add to stack
+            stack.push(i);
+        else if(str[i]===")"){ //if it is a closing brace,
+            if(stack.length) stack.pop(); //if the stack has length, we pop from the stack
+            else str[i]=""; //otherwise, chance that element to an empty string
+        }
+    }
+    
+    for(let i of stack) str[i] = ""; // the stack still has indices we change them in our string array to empty strings
+    
+    return str.join(""); //return the string array converted back to a string
+	
+}
+
 /* Approach:
 Using a stack implementation:
 If stack is empty and we encounter a closing bracket, we need to remove it.
@@ -60,3 +80,4 @@ Second iteration, build the string again, skipping the indices that we wanted to
 Time = O(n), we essentially have 4 loops, first to add/remove from stack O(n), next we add any excess items from the stack to our set O(n), next we build our string O(n), and finally we perform a join O(n). So our time complexity would be O(4n), since 4 is a constant we can drop it.
 Space = O(n)
 */
+
