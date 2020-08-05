@@ -17,21 +17,24 @@ The fourth person goes to city B for a cost of 20.
 
 The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
 */
-var twoCitySchedCost = function(costs) {
-    let minCost = 0 //initialize min Cost container
-    costs.sort((a,b) => (a[0] - a[1]) - (b[0] - b[1])) //sort by when traveling to city A saves the company more money than city B (cost of A - cost of B)
+var twoCitySchedCost = function (costs) {
+  let minCost = 0; //initialize min Cost container
+  costs.sort((a, b) => a[0] - a[1] - (b[0] - b[1])); //sort by when traveling to city A saves the company more money than city B (cost of A - cost of B)
 
-    let n = costs.length/2 //half the number of people have to go to city A & half city B
-    for(let i = 0; i < costs.length; i++) { //loop throught he entire length
-        if(i < n) { //if the index is less than or equal to half, calculate city A price
-            minCost += costs[i][0]
-        } else { //otherwise, if it is the latter half, calculate city B price
-            minCost += costs[i][1]
-        }
+  let n = costs.length / 2; //half the number of people have to go to city A & half city B
+  for (let i = 0; i < costs.length; i++) {
+    //loop throught he entire length
+    if (i < n) {
+      //if the index is less than or equal to half, calculate city A price
+      minCost += costs[i][0];
+    } else {
+      //otherwise, if it is the latter half, calculate city B price
+      minCost += costs[i][1];
     }
-    return minCost //return total price
+  }
+  return minCost; //return total price
 };
 
 //Time = O(n log n) (for sorting)
 
-//Space = O(1)
+//Space = O(log n) for execution stack

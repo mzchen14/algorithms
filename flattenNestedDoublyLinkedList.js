@@ -27,7 +27,7 @@ var flatten = function (head) {
       head.next = stack.pop(); //pop them from the stack and set them as the next value
       head.next.prev = head; //set the prev as well
     }
-    head = head.next; //if there is no child, we are just going to set the head to the next
+    head = head.next; //otherwise, just iterate
   }
   return temp; //return the temp
 };
