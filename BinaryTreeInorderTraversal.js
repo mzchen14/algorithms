@@ -35,3 +35,21 @@ var inorderTraversal = function (root) {
   helper(root); //start the function by running the helper function on the root.
   return nodes; //return the nodes array
 };
+
+//Iterative
+
+var inorderTraversal = function (root) {
+  let stack = [];
+  let nodes = [];
+
+  while (root || stack.length) {
+    while (root) {
+      stack.push(root);
+      root = root.left;
+    }
+    let curr = stack.pop();
+    nodes.push(curr.val);
+    root = curr.right;
+  }
+  return nodes;
+};
