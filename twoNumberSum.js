@@ -45,3 +45,16 @@ Once sorted, binary search is always an option.
 NOTE: This quetion is different from Two Sum on Leetcode which asks you to return the INDICES,
 in that case, sorting would not be an option.
 */
+
+/* Python Solution */
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+        for i, value in enumerate(nums):
+            remaining = target - nums[i]
+            
+            if remaining in seen:
+                return [i, seen[remaining]]
+            else:
+                seen[value] = i
